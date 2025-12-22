@@ -111,4 +111,4 @@ Wir setzen angemessene Maßnahmen ein, um Daten zu schützen (z. B. verschlüsse
 
 10. Änderungen
 
-Wir können diese Datenschutzerklärung aktualisieren. Die aktuelle Version ist jederzeit unter dieser URL abrufbar: [deine Privacy-Policy-URL]
+Wir können diese Datenschutzerklärung aktualisieren. Die aktuelle Version ist jederzeit unter dieser URL abrufbar: daybeeapp.github.io
