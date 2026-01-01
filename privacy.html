@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DayBee — Privacy Policy</title>
+  <meta name="theme-color" content="#0B1220" />
+  <style>
+    :root{
+      --bg0:#070B14; --bg1:#0B1220; --text:#EAF2FF; --muted:#A7B7D6;
+      --card: rgba(255,255,255,.04); --border: rgba(255,255,255,.10);
+      --radius: 18px;
+    }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background: linear-gradient(180deg, var(--bg0), var(--bg1));
+    }
+    .wrap{ max-width:900px; margin:0 auto; padding:28px 18px 60px; }
+    .top{
+      display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;
+      padding-bottom:18px; border-bottom:1px solid var(--border);
+      margin-bottom:18px;
+    }
+    a{ color:var(--text); text-decoration:none; font-weight:800; }
+    a:hover{ text-decoration:underline; }
+    .card{
+      background: var(--card);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      padding:18px;
+      line-height:1.55;
+    }
+    h1{ margin:0; letter-spacing:-.4px; }
+    h2{ margin:18px 0 8px; }
+    .muted{ color:var(--muted); }
+    ul{ margin:8px 0 10px 18px; }
+    code{ background: rgba(255,255,255,.06); padding:2px 6px; border-radius:8px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <h1>Privacy Policy — DayBee</h1>
+        <div class="muted">Last updated: December 22, 2025</div>
+      </div>
+      <div style="display:flex; gap:14px;">
+        <a href="index.html">← Back</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>1. Controller</h2>
+      <p>
+        Controller within the meaning of the GDPR:<br/>
+        Esat Karabiyik<br/>
+        Contact: <a href="mailto:daybeeapp-privacy@web.de">daybeeapp-privacy@web.de</a>
+      </p>
+
+      <h2>2. What is this policy about?</h2>
+      <p>
+        This Privacy Policy explains which personal data the DayBee app processes, for what purposes it is used,
+        to whom it may be transferred, and which rights you have as a user.
+      </p>
+
+      <h2>3. What data does DayBee process?</h2>
+      <h3>3.1 Account data (Supabase Auth)</h3>
+      <ul>
+        <li>Email address</li>
+        <li>Internal user ID</li>
+        <li>Authentication / session information</li>
+      </ul>
+      <p><b>Purpose:</b> Account access, account management, and synchronization of your data.<br/>
+         <b>Legal basis:</b> Art. 6(1)(b) GDPR (performance of a contract).</p>
+
+      <h3>3.2 Content you enter in the app (stored server-side)</h3>
+      <ul>
+        <li>Daily plans / tasks / goals</li>
+        <li>Notes / reflections / logs</li>
+        <li>App settings you configure</li>
+      </ul>
+      <p><b>Purpose:</b> Providing core app functionality, in-app personalization, and synchronization across devices.<br/>
+         <b>Legal basis:</b> Art. 6(1)(b) GDPR.</p>
+
+      <h3>3.3 AI processing (OpenAI)</h3>
+      <p>
+        If you use AI features, content (e.g. notes or planning text) may be transmitted to and processed by our AI service
+        provider in order to generate suggestions or analyses.
+      </p>
+      <p><b>Purpose:</b> Generating personalized suggestions and evaluations.<br/>
+         <b>Legal basis:</b> Art. 6(1)(b) GDPR.</p>
+      <p class="muted">
+        Note: Please do not enter sensitive information (e.g. health data) into free-text fields if you do not want it
+        to be transmitted to the AI service for processing.
+      </p>
+
+      <h3>3.4 Technical data / logs</h3>
+      <ul>
+        <li>Timestamps of requests, error codes</li>
+        <li>Server-side log data for error analysis</li>
+      </ul>
+      <p><b>Purpose:</b> Security, stability, and troubleshooting.<br/>
+         <b>Legal basis:</b> Art. 6(1)(f) GDPR (legitimate interest).</p>
+
+      <h3>3.5 Analytics (PostHog — only if enabled)</h3>
+      <p>
+        If analytics is enabled, usage data may be processed (e.g. screen views, feature usage, device/app info).
+        <br/><b>Legal basis:</b> Art. 6(1)(f) GDPR (legitimate interest) or Art. 6(1)(a) GDPR (consent), depending on configuration.
+      </p>
+
+      <h2>4. Recipients / service providers</h2>
+      <ul>
+        <li>Supabase: authentication, database and backend hosting</li>
+        <li>OpenAI: AI processing to generate suggestions</li>
+        <li>PostHog: analytics</li>
+      </ul>
+
+      <h2>5. Data transfers to third countries</h2>
+      <p>
+        Depending on the provider’s location, data may be processed outside the EU/EEA. Where required, appropriate safeguards
+        are used (e.g. standard contractual clauses).
+      </p>
+
+      <h2>6. Data retention</h2>
+      <ul>
+        <li>Account and app data: until you delete your account or data is no longer required</li>
+        <li>Logs/diagnostic data: typically retained for 30 days where required for error analysis</li>
+      </ul>
+
+      <h2>7. Your rights</h2>
+      <p>
+        You have the right to access, rectification, erasure, restriction of processing, data portability, objection,
+        and withdrawal of consent. Contact: <a href="mailto:daybeeapp-privacy@web.de">daybeeapp-privacy@web.de</a><br/>
+        You also have the right to lodge a complaint with a data protection supervisory authority.
+      </p>
+
+      <h2>8. Account deletion</h2>
+      <p>
+        You can delete your account directly in the app under:<br/>
+        <code>Settings → Account → Delete account</code><br/>
+        Alternatively, request deletion via email (include the account email address).
+      </p>
+
+      <h2>9. Security</h2>
+      <p>We implement appropriate measures to protect data (e.g. encrypted transmission, access controls).</p>
+
+      <h2>10. Changes</h2>
+      <p>
+        We may update this Privacy Policy. The current version is always available under this URL.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
