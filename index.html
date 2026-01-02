@@ -23,26 +23,43 @@
       background: var(--bg);
       color: var(--text);
       line-height:1.45;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
     a{color:inherit}
     .wrap{max-width:1080px;margin:0 auto;padding:28px 18px 60px}
-    .topbar{
-      display:flex;align-items:center;justify-content:space-between;gap:16px;
-      padding:10px 6px;
+
+    /* HEADER (Brand top, nav below) */
+    header.topbar{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:14px;
+      padding:10px 6px 6px;
     }
     .brand{
-      display:flex;align-items:center;gap:12px;text-decoration:none;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
     }
     .logo{
-      width:42px;height:42px;border-radius:14px;
+      width:44px;height:44px;border-radius:16px;
       box-shadow: 0 10px 25px rgba(72,61,61,.12);
-      background:#fff;
+      background: var(--bg);
       object-fit:cover;
+      display:block;
     }
-    .brand strong{font-size:18px;letter-spacing:.2px}
+    .brand strong{
+      font-size:20px;
+      letter-spacing:.2px;
+    }
     .nav{
-      display:flex;gap:12px;align-items:center;flex-wrap:wrap;
-      opacity:.9;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+      opacity:.95;
     }
     .nav a{
       text-decoration:none;
@@ -51,10 +68,14 @@
       border-radius:999px;
       background: rgba(255,255,255,.35);
       transition: transform .12s ease, background .12s ease;
+      font-weight:650;
+      font-size:14px;
     }
     .nav a:hover{transform: translateY(-1px); background: rgba(255,255,255,.6)}
+
+    /* HERO */
     .hero{
-      margin-top:26px;
+      margin-top:22px;
       display:grid;
       grid-template-columns: 1.15fr .85fr;
       gap:22px;
@@ -86,7 +107,7 @@
       padding:10px 12px;
       border:1px solid var(--stroke);
       background: rgba(185,221,255,.45);
-      font-weight:600;
+      font-weight:700;
       font-size:13px;
     }
     .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
@@ -96,22 +117,18 @@
       padding:12px 16px;border-radius:18px;
       border:1px solid var(--stroke);
       background: rgba(255,255,255,.55);
-      font-weight:700;
+      font-weight:800;
       transition: transform .12s ease, box-shadow .12s ease;
     }
     .btnPrimary{
-      background: linear-gradient(135deg, rgba(185,221,255,.85), rgba(90,146,210,.85));
+      background: linear-gradient(135deg, rgba(185,221,255,.90), rgba(90,146,210,.85));
       color: var(--text);
       border-color: rgba(72,61,61,.10);
       box-shadow: 0 16px 40px rgba(90,146,210,.22);
     }
     .btn:hover{transform: translateY(-1px)}
-    .tiny{
-      margin-top:12px;
-      font-size:13px;
-      opacity:.75;
-    }
 
+    /* Screen card */
     .screenCard{
       position:relative;
       padding:18px;
@@ -120,21 +137,40 @@
         radial-gradient(700px 420px at 80% 90%, rgba(90,146,210,.30), transparent 60%),
         rgba(255,255,255,.35);
     }
+
     .shots{
       display:grid;
       grid-template-columns: 1fr 1fr;
-      gap:12px;
+      gap:16px;
       align-items:end;
     }
+
+    /* Remove white corners: use transparent-friendly framing */
     .shot{
       width:100%;
-      border-radius:22px;
+      border-radius:24px;
       border:1px solid rgba(72,61,61,.14);
       box-shadow: 0 16px 40px rgba(72,61,61,.12);
-      background:#fff;
+
+      /* KEY FIX: no white background behind PNG corners */
+      background: var(--bg);
+
+      /* Helps if images have anti-aliased edges */
+      display:block;
       object-fit:cover;
     }
 
+    /* Optional: add a soft “mat” so edges look intentional */
+    .shotWrap{
+      border-radius:26px;
+      padding:10px;
+      background: rgba(255,255,255,.28);
+      border:1px solid rgba(72,61,61,.10);
+      box-shadow: 0 12px 30px rgba(72,61,61,.08);
+    }
+    .shotWrap > img{border-radius:20px}
+
+    /* Value section */
     .section{
       margin-top:22px;
       display:grid;
@@ -161,15 +197,33 @@
       font-size:13px;
     }
     footer a{opacity:.9}
+
+    /* RESPONSIVE */
     @media (max-width: 900px){
       .hero{grid-template-columns:1fr}
       .section{grid-template-columns:1fr}
-      .shots{grid-template-columns:1fr 1fr}
     }
+
+    /* Mobile: center header, stack screens, increase spacing */
     @media (max-width: 520px){
-      .shots{grid-template-columns:1fr}
-      .nav{gap:8px}
-      .nav a{padding:9px 12px}
+      header.topbar{
+        align-items:center;
+        text-align:center;
+      }
+      .brand{justify-content:center}
+      .nav{
+        justify-content:center;
+        gap:10px;
+      }
+      .nav a{padding:10px 14px}
+
+      .shots{
+        grid-template-columns:1fr;
+        gap:18px; /* more space between images */
+      }
+      .card{padding:20px}
+      .screenCard{padding:16px}
+      .shotWrap{padding:12px}
     }
   </style>
 </head>
@@ -180,10 +234,12 @@
         <img class="logo" src="./assets/AppIcon.png" alt="DayBee App Icon" />
         <strong>DayBee</strong>
       </a>
+
+      <!-- nav moved UNDER logo/text -->
       <nav class="nav" aria-label="Primary">
         <a href="./privacy.html">Privacy</a>
         <a href="./terms.html">Terms</a>
-        <a href="mailto:daybeeapp-privacy@web.de">Support</a>
+        <a href="mailto:daybeeapp-privacy@web.de">Contact</a>
       </nav>
     </header>
 
@@ -205,14 +261,16 @@
           <a class="btn btnPrimary" href="#" aria-disabled="true">Download on the App Store</a>
           <a class="btn" href="./privacy.html">Read Privacy</a>
         </div>
-
-       
       </section>
 
       <aside class="card screenCard">
         <div class="shots">
-          <img class="shot" src="./assets/iPhone 17 Pro - Deep Blue- note.png" alt="DayBee note screen" />
-          <img class="shot" src="./assets/iPhone 17 Pro - Deep Blue - planm.png" alt="DayBee plan screen" />
+          <div class="shotWrap">
+            <img class="shot" src="./assets/iPhone 17 Pro - Deep Blue- note.png" alt="DayBee note screen" />
+          </div>
+          <div class="shotWrap">
+            <img class="shot" src="./assets/iPhone 17 Pro - Deep Blue - planm.png" alt="DayBee plan screen" />
+          </div>
         </div>
       </aside>
     </main>
