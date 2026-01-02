@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DayBee – Datenschutzerklärung</title>
+  <title>DayBee – Privacy Policy</title>
   <style>
     :root{
       --bg:#FFFDF3;
@@ -22,21 +22,75 @@
       background: var(--bg);
       color: var(--text);
       line-height:1.55;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
     .wrap{max-width:920px;margin:0 auto;padding:28px 18px 60px}
-    header{
-      display:flex;align-items:center;justify-content:space-between;gap:16px;
-      padding:10px 6px;margin-bottom:18px;
+
+    /* ===== Consistent header (same as index) ===== */
+    header.topbar{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:14px;
+      padding:10px 6px 6px;
+      margin-bottom:18px;
     }
-    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-    .logo{width:40px;height:40px;border-radius:14px;box-shadow:0 10px 25px rgba(72,61,61,.12);background:#fff;object-fit:cover}
-    .nav{display:flex;gap:10px;flex-wrap:wrap}
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      color:var(--text);
+    }
+    .logo{
+      width:44px;height:44px;border-radius:16px;
+      box-shadow: 0 10px 25px rgba(72,61,61,.12);
+      background: var(--bg);
+      object-fit:cover;
+      display:block;
+    }
+    .brand strong{font-size:20px;letter-spacing:.2px}
+
+    .nav{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+      opacity:.95;
+    }
+
+    /* Prevent weird visited/link colors */
+    .nav a,
+    .nav a:visited,
+    .nav a:hover,
+    .nav a:active{
+      color: var(--text);
+    }
+
     .nav a{
       text-decoration:none;
-      padding:10px 14px;border-radius:999px;
+      padding:10px 14px;
+      border-radius:999px;
       border:1px solid var(--stroke);
       background: rgba(255,255,255,.35);
+      transition: transform .12s ease, background .12s ease;
+      font-weight:650;
+      font-size:14px;
     }
+    .nav a:hover{transform: translateY(-1px); background: rgba(255,255,255,.6)}
+
+    /* Active tab highlight */
+    .nav a.active{
+      background: rgba(185,221,255,.55);
+      border-color: rgba(90,146,210,.35);
+      box-shadow: 0 10px 26px rgba(90,146,210,.14);
+    }
+
+    /* ===== Page content ===== */
+    a, a:visited{ color: var(--blue); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
     .card{
       border:1px solid var(--stroke);
       background: var(--card);
@@ -51,19 +105,27 @@
     ul{margin:8px 0 14px 18px}
     code{background:rgba(185,221,255,.35);padding:2px 6px;border-radius:8px;border:1px solid rgba(72,61,61,.10)}
     .muted{opacity:.8}
+
+    @media (max-width:520px){
+      header.topbar{align-items:center;text-align:center}
+      .brand{justify-content:center}
+      .nav{justify-content:center}
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header>
+    <header class="topbar">
       <a class="brand" href="./">
         <img class="logo" src="./assets/AppIcon.png" alt="DayBee App Icon" />
         <strong>DayBee</strong>
       </a>
-      <nav class="nav">
+
+      <nav class="nav" aria-label="Primary">
         <a href="./">Home</a>
+        <a class="active" href="./privacy.html">Privacy</a>
         <a href="./terms.html">Terms</a>
-        <a href="mailto:daybeeapp-privacy@web.de">Support</a>
+        <a href="mailto:daybeeapp-privacy@web.de">Contact</a>
       </nav>
     </header>
 
@@ -157,7 +219,7 @@
 
       <h2>5. International transfers</h2>
       <p>
-        Depending on provider locations, data may be processed outside the EU/EEA (e.g., AI services).
+        Depending on provider locations, data may be processed outside the EU/EEA.
         Where required, we use appropriate safeguards (e.g., standard contractual clauses).
       </p>
 
